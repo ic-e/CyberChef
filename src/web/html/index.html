@@ -43,13 +43,13 @@
 
             // Define loading messages
             var loadingMsgs = [
-                "Proving P = NP...",
-                "Computing 6 x 9...",
+                "正在证明 P = NP...",
+                "正在计算 6 x 9...",
                 "Mining bitcoin...",
-                "Dividing by 0...",
-                "Initialising Skynet...",
+                "正在除以 0...",
+                "正在初始化 Skynet...",
                 "[REDACTED]",
-                "Downloading more RAM...",
+                "正在下载更多 RAM...",
                 "Ordering 1s and 0s...",
                 "Navigating neural network...",
                 "Importing machine learning...",
@@ -121,12 +121,12 @@
                 document.getElementById("preloader").remove();
                 document.getElementById("preloader-msg").remove();
                 document.getElementById("preloader-error").innerHTML =
-                    "CyberChef encountered an error while loading.<br><br>" +
-                    "The following browser versions are supported:" +
+                    "CyberChef 在加载时遇到了错误。<br><br>" +
+                    "下面的浏览器版本是受支持的：" +
                     "<ul><li>Google Chrome 50+</li><li>Mozilla Firefox 38+</li></ul>" +
-                    "Your user agent is:<br>" + escapeHtml(navigator.userAgent) + "<br><br>" +
-                    "If your browser is supported, please <a href='https://github.com/gchq/CyberChef/issues/new/choose'>" +
-                    "raise an issue</a> including the following details:<br><br>" +
+                    "你的 user agent 是:<br>" + escapeHtml(navigator.userAgent) + "<br><br>" +
+                    "如果你的浏览器受支持，请到 <a href='https://github.com/gchq/CyberChef/issues/new/choose'>" +
+                    "提 issue</a> 并包含进下面的详情:<br><br>" +
                     "<pre>" + escapeHtml(msg) + "</pre>";
             };
             window.addEventListener("error", loadingErrorHandler);
@@ -146,44 +146,44 @@
         <div id="content-wrapper">
             <div id="banner" class="row">
                 <div class="col" style="text-align: left; padding-left: 10px;">
-                    <a href="CyberChef_v<%= htmlWebpackPlugin.options.version %>.zip" download>Download CyberChef <i class="material-icons">file_download</i></a>
+                    <a href="CyberChef_v<%= htmlWebpackPlugin.options.version %>.zip" download>下载 CyberChef <i class="material-icons">file_download</i></a>
                 </div>
                 <div class="col-md-6" id="notice-wrapper">
                     <span id="notice">
                         <script type="text/javascript">
                             // Must be text/javascript rather than application/javascript otherwise IE won't recognise it...
                             if (navigator.userAgent && navigator.userAgent.match(/Trident/)) {
-                                document.write("Internet Explorer is not supported, please use Firefox or Chrome instead");
-                                alert("Internet Explorer is not supported, please use Firefox or Chrome instead");
+                                document.write("不支持 Internet Explorer，请使用 Firefox 或 Chrome");
+                                alert("不支持 Internet Explorer，请使用 Firefox 或 Chrome");
                             }
                         </script>
-                        <noscript>JavaScript is not enabled. Good luck.</noscript>
+                        <noscript>JavaScript 被禁用了。祝好运。</noscript>
                     </span>
                 </div>
                 <div class="col" style="text-align: right; padding-right: 0;">
-                    <a href="#" id="options">Options <i class="material-icons">settings</i></a>
-                    <a href="#" id="support" data-toggle="modal" data-target="#support-modal">About / Support <i class="material-icons">help</i></a>
+                    <a href="#" id="options">选项 <i class="material-icons">settings</i></a>
+                    <a href="#" id="support" data-toggle="modal" data-target="#support-modal">关于 / 支持 <i class="material-icons">help</i></a>
                 </div>
             </div>
             <div id="workspace-wrapper">
                 <div id="operations" class="split split-horizontal no-select">
-                    <div class="title no-select">Operations</div>
-                    <input id="search" type="search" class="form-control" placeholder="Search..." autocomplete="off" tabindex="2">
+                    <div class="title no-select">操作</div>
+                    <input id="search" type="search" class="form-control" placeholder="搜索..." autocomplete="off" tabindex="2">
                     <ul id="search-results" class="op-list"></ul>
                     <div id="categories" class="panel-group no-select"></div>
                 </div>
 
                 <div id="recipe" class="split split-horizontal no-select">
                     <div class="title no-select">
-                        Recipe
+                        配方
                         <span class="float-right">
-                            <button type="button" class="btn btn-primary bmd-btn-icon" id="save" data-toggle="tooltip" title="Save recipe">
+                            <button type="button" class="btn btn-primary bmd-btn-icon" id="save" data-toggle="tooltip" title="保存配方">
                                 <i class="material-icons">save</i>
                             </button>
-                            <button type="button" class="btn btn-primary bmd-btn-icon" id="load" data-toggle="tooltip" title="Load recipe">
+                            <button type="button" class="btn btn-primary bmd-btn-icon" id="load" data-toggle="tooltip" title="加载配方">
                                 <i class="material-icons">folder</i>
                             </button>
-                            <button type="button" class="btn btn-primary bmd-btn-icon" id="clr-recipe" data-toggle="tooltip" title="Clear recipe">
+                            <button type="button" class="btn btn-primary bmd-btn-icon" id="clr-recipe" data-toggle="tooltip" title="清空配方">
                                 <i class="material-icons">delete</i>
                             </button>
                         </span>
@@ -192,8 +192,8 @@
 
                     <div id="controls" class="no-select">
                         <div id="controls-content" class="d-flex align-items-center">
-                            <button type="button" class="mx-2 btn btn-lg btn-secondary" id="step" data-toggle="tooltip" title="Step through the recipe">
-                                Step
+                            <button type="button" class="mx-2 btn btn-lg btn-secondary" id="step" data-toggle="tooltip" title="单步走过配方">
+                                单步
                             </button>
 
                             <button type="button" class="mx-2 btn btn-lg btn-success btn-raised btn-block" id="bake">
@@ -205,7 +205,7 @@
                                 <div class="mx-1 checkbox">
                                     <label id="auto-bake-label">
                                         <input type="checkbox" checked="checked" id="auto-bake">
-                                        <br>Auto Bake
+                                        <br>自动 Bake
                                     </label>
                                 </div>
                             </div>
@@ -216,23 +216,23 @@
                 <div class="split split-horizontal" id="IO">
                     <div id="input" class="split no-select">
                         <div class="title no-select">
-                            <label for="input-text">Input</label>
+                            <label for="input-text">输入</label>
                             <span class="float-right">
-                                <button type="button" class="btn btn-primary bmd-btn-icon" id="btn-new-tab" data-toggle="tooltip" title="Add a new input tab">
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="btn-new-tab" data-toggle="tooltip" title="新建输入标签页">
                                     <i class="material-icons">add</i>
                                 </button>
-                                <button type="button" class="btn btn-primary bmd-btn-icon" id="btn-open-folder" data-toggle="tooltip" title="Open folder as input">
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="btn-open-folder" data-toggle="tooltip" title="打开文件夹作为输入">
                                     <i class="material-icons">folder_open</i>
                                     <input type="file" id="open-folder" style="display: none" multiple directory webkitdirectory>
                                 </button>
-                                <button type="button" class="btn btn-primary bmd-btn-icon" id="btn-open-file" data-toggle="tooltip" title="Open file as input">
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="btn-open-file" data-toggle="tooltip" title="打开文件作为输入">
                                     <i class="material-icons">input</i>
                                     <input type="file" id="open-file" style="display: none" multiple>
                                 </button>
-                                <button type="button" class="btn btn-primary bmd-btn-icon" id="clr-io" data-toggle="tooltip" title="Clear input and output">
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="clr-io" data-toggle="tooltip" title="清空输入和输出">
                                     <i class="material-icons">delete</i>
                                 </button>
-                                <button type="button" class="btn btn-primary bmd-btn-icon" id="reset-layout" data-toggle="tooltip" title="Reset pane layout">
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="reset-layout" data-toggle="tooltip" title="重置面板布局">
                                     <i class="material-icons">view_compact</i>
                                 </button>
                             </span>
@@ -249,13 +249,13 @@
                             </span>
                             <div class="dropdown-menu" aria-labelledby="btn-input-tab-dropdown">
                                 <a id="btn-go-to-input-tab" class="dropdown-item">
-                                    Go to tab
+                                    前往标签页
                                 </a>
                                 <a id="btn-find-input-tab" class="dropdown-item">
-                                    Find tab
+                                    查找标签页
                                 </a>
                                 <a id="btn-close-all-tabs" class="dropdown-item">
-                                    Close all tabs
+                                    关闭所有标签页
                                 </a>
                             </div>
                             <span id="btn-next-input-tab" class="input-tab-buttons">
@@ -271,13 +271,13 @@
                                 <div class="file-overlay" id="file-overlay"></div>
                                 <div style="position: relative; height: 100%;">
                                     <div class="io-card card">
-                                        <img aria-hidden="true" src="<%- require('../static/images/file-128x128.png').default %>" alt="File icon" id="input-file-thumbnail"/>
+                                        <img aria-hidden="true" src="<%- require('../static/images/file-128x128.png').default %>" alt="文件图标" id="input-file-thumbnail"/>
                                         <div class="card-body">
                                             <button type="button" class="close" id="input-file-close">&times;</button>
-                                            Name: <span id="input-file-name"></span><br>
-                                            Size: <span id="input-file-size"></span><br>
-                                            Type: <span id="input-file-type"></span><br>
-                                            Loaded: <span id="input-file-loaded"></span>
+                                            文件名：<span id="input-file-name"></span><br>
+                                            大小：<span id="input-file-size"></span><br>
+                                            类型：<span id="input-file-type"></span><br>
+                                            已加载：<span id="input-file-loaded"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -287,24 +287,24 @@
 
                     <div id="output" class="split">
                         <div class="title no-select">
-                            <label for="output-text">Output</label>
+                            <label for="output-text">输出</label>
                             <span class="float-right">
-                                <button type="button" class="btn btn-primary bmd-btn-icon" id="save-all-to-file" data-toggle="tooltip" title="Save all outputs to a zip file" style="display: none">
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="save-all-to-file" data-toggle="tooltip" title="把所有输出保存到一个 zip 文件" style="display: none">
                                         <i class="material-icons">archive</i>
                                     </button>
-                                <button type="button" class="btn btn-primary bmd-btn-icon" id="save-to-file" data-toggle="tooltip" title="Save output to file">
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="save-to-file" data-toggle="tooltip" title="把输出保存到文件">
                                     <i class="material-icons">save</i>
                                 </button>
-                                <button type="button" class="btn btn-primary bmd-btn-icon" id="copy-output" data-toggle="tooltip" title="Copy raw output to the clipboard">
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="copy-output" data-toggle="tooltip" title="把原始输出保存到剪贴板">
                                     <i class="material-icons">content_copy</i>
                                 </button>
-                                <button type="button" class="btn btn-primary bmd-btn-icon" id="switch" data-toggle="tooltip" title="Replace input with output">
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="switch" data-toggle="tooltip" title="用输出结果替换输入">
                                     <i class="material-icons">open_in_browser</i>
                                 </button>
-                                <button type="button" class="btn btn-primary bmd-btn-icon" id="undo-switch" data-toggle="tooltip" title="Undo" disabled="disabled">
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="undo-switch" data-toggle="tooltip" title="撤销" disabled="disabled">
                                     <i class="material-icons">undo</i>
                                 </button>
-                                <button type="button" class="btn btn-primary bmd-btn-icon" id="maximise-output" data-toggle="tooltip" title="Maximise output pane">
+                                <button type="button" class="btn btn-primary bmd-btn-icon" id="maximise-output" data-toggle="tooltip" title="最大化输出面板">
                                     <i class="material-icons">fullscreen</i>
                                 </button>
                             </span>
@@ -330,10 +330,10 @@
                                 </span>
                                 <div class="dropdown-menu" aria-labelledby="btn-input-tab-dropdown">
                                     <a id="btn-go-to-output-tab" class="dropdown-item">
-                                        Go to tab
+                                        前往标签页
                                     </a>
                                     <a id="btn-find-output-tab" class="dropdown-item">
-                                        Find tab
+                                        查找标签页
                                     </a>
                                 </div>
                                 <span id="btn-next-output-tab" class="output-tab-buttons">
@@ -351,10 +351,10 @@
                                     <div class="file-overlay"></div>
                                     <div style="position: relative; height: 100%;">
                                         <div class="io-card card">
-                                            <img aria-hidden="true" src="<%- require('../static/images/file-128x128.png').default %>" alt="File icon"/>
+                                            <img aria-hidden="true" src="<%- require('../static/images/file-128x128.png').default %>" alt="文件图标"/>
                                             <div class="card-body">
-                                                Size: <span id="output-file-size"></span><br>
-                                                <button id="output-file-download" type="button" class="btn btn-primary btn-outline">Download</button>
+                                                大小：<span id="output-file-size"></span><br>
+                                                <button id="output-file-download" type="button" class="btn btn-primary btn-outline">下载</button>
                                                 <button id="output-file-show-all" type="button" class="btn btn-warning btn-outline" data-toggle="tooltip" title="Warning: This could crash your browser. Use at your own risk.">Show all</button>
                                                 <div class="input-group">
                                                     <span class="input-group-prepend">
@@ -388,19 +388,19 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Save recipe</h5>
+                        <h5 class="modal-title">保存配方</h5>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#chef-format" role="tab" data-toggle="tab">Chef format</a>
+                                    <a class="nav-link active" href="#chef-format" role="tab" data-toggle="tab">Chef 格式</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#clean-json" role="tab" data-toggle="tab">Clean JSON</a>
+                                    <a class="nav-link" href="#clean-json" role="tab" data-toggle="tab">整齐的 JSON</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#compact-json" role="tab" data-toggle="tab">Compact JSON</a>
+                                    <a class="nav-link" href="#compact-json" role="tab" data-toggle="tab">紧凑的 JSON</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="save-texts">
@@ -416,24 +416,24 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="save-name" class="bmd-label-floating">Recipe name</label>
+                            <label for="save-name" class="bmd-label-floating">配方名</label>
                             <input type="text" class="form-control" id="save-name">
-                            <span class="bmd-help">Save your recipe to local storage using this name, or copy it to load later</span>
+                            <span class="bmd-help">把你的菜谱以这个名字保存到本地，或者拷贝它以供加载</span>
                         </div>
                     </div>
                     <div class="modal-footer" id="save-footer">
-                        <button type="button" class="btn btn-primary" id="save-button" data-dismiss="modal">Save</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+                        <button type="button" class="btn btn-primary" id="save-button" data-dismiss="modal">保存</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">完成</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group" id="save-link-group">
-                            <h6 style="display: inline">Data link</h6>
+                            <h6 style="display: inline">数据链接</h6>
                             <div class="save-link-options">
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" id="save-link-recipe-checkbox" checked> Include recipe
+                                    <input type="checkbox" id="save-link-recipe-checkbox" checked> 包含菜谱
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" id="save-link-input-checkbox" checked> Include input
+                                    <input type="checkbox" id="save-link-input-checkbox" checked> 包含输入
                                 </label>
                             </div>
                             <br><br>
@@ -448,24 +448,24 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Load recipe</h5>
+                        <h5 class="modal-title">加载配方</h5>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="load-name" class="bmd-label-floating">Recipe name</label>
+                            <label for="load-name" class="bmd-label-floating">菜谱名</label>
                             <select class="form-control" id="load-name"></select>
-                            <span class="bmd-help">Load your recipe from local storage by selecting its name from the drop-down</span>
+                            <span class="bmd-help">在下拉菜单选择菜谱名以载入你的菜谱</span>
                         </div>
                         <div class="form-group">
                             <label for="load-text" class="bmd-label-floating">Recipe</label>
                             <textarea class="form-control" id="load-text" rows="5"></textarea>
-                            <span class="bmd-help">Load your recipe by pasting it into this box</span>
+                            <span class="bmd-help">把菜谱传进这个方框以载入你的菜谱</span>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id="load-button" data-dismiss="modal">Load</button>
-                        <button type="button" class="btn btn-danger" id="load-delete-button">Delete</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="load-button" data-dismiss="modal">加载</button>
+                        <button type="button" class="btn btn-danger" id="load-delete-button">删除</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
                     </div>
                 </div>
             </div>
@@ -475,13 +475,13 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Options</h5>
+                        <h5 class="modal-title">选项</h5>
                     </div>
                     <div class="modal-body" id="options-body">
-                        <p style="font-weight: bold">Please note that these options will persist between sessions.</p>
+                        <p style="font-weight: bold">请注意这些选项会在以后的会话中一直保持有效。</p>
 
                         <div class="form-group option-item">
-                            <label for="theme" class="bmd-label-floating"> Theme (only supported in modern browsers)</label>
+                            <label for="theme" class="bmd-label-floating"> 主题（仅在现代浏览器中支持）</label>
                             <select class="form-control" option="theme" id="theme">
                                 <option value="classic">Classic</option>
                                 <option value="dark">Dark</option>
@@ -501,17 +501,17 @@
                         </div>
 
                         <div class="form-group option-item">
-                            <label for="errorTimeout" class="bmd-label-floating">Operation error timeout in ms (0 for never)</label>
+                            <label for="errorTimeout" class="bmd-label-floating">操作超时报错的毫秒数（0 代表永远不）</label>
                             <input type="number" class="form-control" option="errorTimeout" id="errorTimeout">
                         </div>
 
                         <div class="form-group option-item">
-                            <label for="ioDisplayThreshold" class="bmd-label-floating">Size threshold for treating the input and output as a file (KiB)</label>
+                            <label for="ioDisplayThreshold" class="bmd-label-floating">将输入和输出处理为文件的大小阈值（KiB）</label>
                             <input type="number" class="form-control" option="ioDisplayThreshold" id="ioDisplayThreshold">
                         </div>
 
                         <div class="form-group option-item">
-                            <label for="logLevel" class="bmd-label-floating">Console logging level</label>
+                            <label for="logLevel" class="bmd-label-floating">控制台日志输出等级</label>
                             <select class="form-control" option="logLevel" id="logLevel">
                                 <option value="silent">Silent</option>
                                 <option value="error">Error</option>
@@ -525,35 +525,35 @@
                         <div class="checkbox option-item">
                             <label for="updateUrl">
                                 <input type="checkbox" option="updateUrl" id="updateUrl" checked>
-                                Update the URL when the input or recipe changes
+                                输入或菜谱变化时更新 URL
                             </label>
                         </div>
 
                         <div class="checkbox option-item">
                             <label for="showHighlighter">
                                 <input type="checkbox" option="showHighlighter" id="showHighlighter" checked>
-                                Highlight selected bytes in output and input (when possible)
+                                在输出和输入中选择的字节高亮（如果可能的话）
                             </label>
                         </div>
 
                         <div class="checkbox option-item">
                             <label for="treatAsUtf8">
                                 <input type="checkbox" option="treatAsUtf8" id="treatAsUtf8" checked>
-                                Treat output as UTF-8 if possible
+                                输出尽可能编码为 UTF-8 
                             </label>
                         </div>
 
                         <div class="checkbox option-item">
                             <label for="wordWrap">
                                 <input type="checkbox" option="wordWrap" id="wordWrap" checked>
-                                Word wrap the input and output
+                               输入和输出自动换行
                             </label>
                         </div>
 
                         <div class="checkbox option-item">
                             <label for="showErrors">
                                 <input type="checkbox" option="showErrors" id="showErrors" checked>
-                                Operation error reporting (recommended)
+                                操作发生错误时汇报（推荐）
                             </label>
                         </div>
 
@@ -567,27 +567,27 @@
                         <div class="checkbox option-item">
                             <label for="autoMagic">
                                 <input type="checkbox" option="autoMagic" id="autoMagic">
-                                Attempt to detect encoded data automagically
+                                尝试自动检测编码数据
                             </label>
                         </div>
 
                         <div class="checkbox option-item">
                             <label for="imagePreview">
                                 <input type="checkbox" option="imagePreview" id="imagePreview">
-                                Render a preview of the input if it's detected to be an image
+                                如果检测到输入为图像，则渲染输入的预览
                             </label>
                         </div>
 
                         <div class="checkbox option-item">
                             <label for="syncTabs">
                                 <input type="checkbox" option="syncTabs" id="syncTabs">
-                                Keep the current tab in sync between the input and output
+                                输入和输出的当前标签页保持同步
                             </label>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" id="reset-options">Reset options to default</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" id="reset-options">重置所有选项为默认值</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
                     </div>
                 </div>
             </div>
@@ -597,7 +597,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Edit Favourites</h5>
+                        <h5 class="modal-title">编辑常用栏</h5>
                     </div>
                     <div class="modal-body" id="favourites-body">
                         <ul>
@@ -623,16 +623,16 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">CyberChef - The Cyber Swiss Army Knife</h5>
+                        <h5 class="modal-title">CyberChef - 网络领域的瑞士军刀</h5>
                     </div>
                     <div class="modal-body">
                         <img aria-hidden="true" class="about-img-left" src="<%- require('../static/images/cyberchef-128x128.png').default %>" alt="CyberChef Logo"/>
                         <p class="subtext">
-                            Version <%=  htmlWebpackPlugin.options.version %><br>
-                            Compile time: <%= htmlWebpackPlugin.options.compileTime %>
+                            版本 <%=  htmlWebpackPlugin.options.version %><br>
+                            编译时间：<%= htmlWebpackPlugin.options.compileTime %>
                         </p>
                         <p>&copy; Crown Copyright 2016.</p>
-                        <p>Released under the Apache Licence, Version 2.0.</p>
+                        <p>根据 Apache Licence 2.0 版发布。</p>
                         <p><a href="https://gitter.im/gchq/CyberChef">
                             <img src="<%- require('../static/images/gitter-badge.svg') %>">
                         </a></p>
@@ -645,17 +645,17 @@
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" href="#report-bug" aria-controls="messages" role="tab" data-toggle="tab">
-                                    Report a bug
+                                    上报 bug
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" href="#about" aria-controls="messages" role="tab" data-toggle="tab">
-                                    About
+                                    关闭
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" href="#keybindings" aria-controls="messages" role="tab" data-toggle="tab">
-                                    Keybindings
+                                    热键绑定
                                 </a>
                             </li>
                         </ul>
@@ -663,10 +663,10 @@
                             <div role="tabpanel" class="tab-pane active" id="faqs">
                                 <br>
                                 <a class="btn btn-primary" data-toggle="collapse" data-target="#faq-examples">
-                                    What sort of things can I do with CyberChef?
+                                    可以用 CyberChef 做些什么？
                                 </a>
                                 <div class="collapse" id="faq-examples">
-                                    <p>There are around 300 operations in CyberChef allowing you to carry out simple and complex tasks easily. Here are some examples:</p>
+                                    <p>Cyber​​Chef中约有300种操作，可让您轻松执行简单和复杂的任务。下面是一些例子：</p>
                                     <ul>
                                         <li><a href="#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)&input=VTI4Z2JHOXVaeUJoYm1RZ2RHaGhibXR6SUdadmNpQmhiR3dnZEdobElHWnBjMmd1">Decode a Base64-encoded string</a></li>
                                         <li><a href="#recipe=Translate_DateTime_Format('Standard%20date%20and%20time','DD/MM/YYYY%20HH:mm:ss','UTC','dddd%20Do%20MMMM%20YYYY%20HH:mm:ss%20Z%20z','Australia/Queensland')&input=MTUvMDYvMjAxNSAyMDo0NTowMA">Convert a date and time to a different time zone</a></li>
@@ -681,64 +681,64 @@
                                 <br>
 
                                 <a class="btn btn-primary" data-toggle="collapse" data-target="#faq-load-files">
-                                    Can I load input directly from files?
+                                    可以直接从文件里载入输入吗？
                                 </a>
                                 <div class="collapse" id="faq-load-files">
-                                    <p>Yes! Just drag your file over the input box and drop it.</p>
-                                    <p>CyberChef can handle files up to around 2GB (depending on your browser), however some of the operations may take a very long time to run over this much data.</p>
-                                    <p>If the output is larger than a certain threshold (default 1MiB), it will be presented to you as a file available for download. Slices of the file can be viewed in the output if you need to inspect them.</p>
+                                    <p>可以！只需将文件拖放到输入框上即可。</p>
+                                    <p>Cyber​​Chef 最多可以处理 2GB 的文件（取决于您的浏览器），但是某些操作可能需要很长时间才能运行这么多的数据。</p>
+                                    <p>如果输出大于某个阈值（默认值为 1MiB），它将作为可供下载的文件显示给您。如果您需要查看它们，在输出中可以看到文件分片。</p>
                                 </div>
                                 <br>
 
                                 <a class="btn btn-primary" data-toggle="collapse" data-target="#faq-fork">
-                                    How do I run operation X over multiple inputs at once?
+                                    怎么一次性对多个输入进行 X 操作？
                                 </a>
                                 <div class="collapse" id="faq-fork">
-                                    <p>Maybe you have 10 timestamps that you want to parse or 16 encoded strings that all have the same key.</p>
-                                    <p>The 'Fork' operation (found in the 'Flow control' category) splits up the input line by line and runs all subsequent operations on each line separately. Each output is then displayed on a separate line. These delimiters can be changed, so if your inputs are separated by commas, you can change the split delimiter to a comma instead.</p>
+                                    <p>也许您有 10 个要解析的时间戳或 16 个都具有相同密钥的加密过的字符串。</p>
+                                    <p>“Fork”操作（可以在“流控制”分类中找到）将输入内容逐行拆分，并在每行上分别进行所有后续操作。每个输出然后显示在单独的行上。可以更改这些定界符，因此，如果您的输入用逗号分隔，则可以将分隔符更改为逗号。</p>
                                     <p><a href="#recipe=Fork('%5C%5Cn','%5C%5Cn',false)From_UNIX_Timestamp('Seconds%20(s)')&input=OTc4MzQ2ODAwCjEwMTI2NTEyMDAKMTA0NjY5NjQwMAoxMDgxMDg3MjAwCjExMTUzMDUyMDAKMTE0OTYwOTYwMA">Click here</a> for an example.</p>
                                 </div>
                                 <br>
 
                                 <a class="btn btn-primary" data-toggle="collapse" data-target="#faq-magic">
-                                    How does the 'Magic' operation work?
+                                    “Magic” 操作是如何实现的？
                                 </a>
                                 <div class="collapse" id="faq-magic">
-                                    <p>The 'Magic' operation uses a number of methods to detect encoded data and the operations which can be used to make sense of it. A technical description of these methods can be found <a href="https://github.com/gchq/CyberChef/wiki/Automatic-detection-of-encoded-data-using-CyberChef-Magic">here</a>.</p>
+                                    <p>“Magic”操作使用多种方法来检测编码的数据以及可以用来理解其含义的操作。这些方法的技术说明可以在<a href="https://github.com/gchq/CyberChef/wiki/Automatic-detection-of-encoded-data-using-CyberChef-Magic">这里</a>找到。</p>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="report-bug">
                                 <br>
-                                <p>If you find a bug in CyberChef, please raise an issue in our GitHub repository explaining it in as much detail as possible. Copy and include the following information if relevant.</p>
+                                <p>如果您发现 Cyber​​Chef 中的 bug，请在我们的 GitHub 仓库中提 issue，并尽可能详细地对其进行解释。复制并包含进以下信息（如果相关的话）。</p>
                                 <br>
                                 <pre id="report-bug-info"></pre>
                                 <br>
-                                <a class="btn btn-primary" href="https://github.com/gchq/CyberChef/issues/new/choose" role="button">Raise issue on GitHub</a>
+                                <a class="btn btn-primary" href="https://github.com/gchq/CyberChef/issues/new/choose" role="button">在 Github 中提 issue</a>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="about" style="padding: 20px;">
                                 <h5><strong>What</strong></h5>
-                                <p>A simple, intuitive web app for analysing and decoding data without having to deal with complex tools or programming languages. CyberChef encourages both technical and non-technical people to explore data formats, encryption and compression.</p><br>
+                                <p>一个简单，直观的 Web 应用程序，用于分析和解码数据，而无需处理复杂的工具或编程语言。Cyber​​Chef 帮助技术人员和非技术人员分析数据格式，加密和压缩。</p><br>
 
                                 <h5><strong>Why</strong></h5>
-                                <p>Digital data comes in all shapes, sizes and formats in the modern world – CyberChef helps to make sense of this data all on one easy-to-use platform.</p><br>
+                                <p>在现代世界中，数字化的数据具有各种形状，大小和格式—— Cyber​​Chef 可以让你在一个易于使用的平台上充分利用好这些数据。</p><br>
 
 
                                 <h5><strong>How</strong></h5>
-                                <p>The interface is designed with simplicity at its heart. Complex techniques are now as trivial as drag-and-drop. Simple functions can be combined to build up a "recipe", potentially resulting in complex analysis, which can be shared with other users and used with their input.</p>
-                                <p>For those comfortable writing code, CyberChef is a quick and efficient way to prototype solutions to a problem which can then be scripted once proven to work.</p><br>
+                                <p>该界面的设计本质是简单。现在，复杂的技术就像拖放一样简单。可以组合简单的功能来构建“配方”，从而可以形成复杂的分析，可以与其他用户共享并与他们的输入一起使用。</p>
+                                <p>对于那些习惯编写代码的人，Cyber​​Chef 是一种快速有效的方法来为问题的解决方案提供原型，一旦证明可以工作，就可以编写脚本。</p><br>
 
 
                                 <h5><strong>Who</strong></h5>
-                                <p>It is expected that CyberChef will be useful for cybersecurity and antivirus companies. It should also appeal to the academic world and any individuals or companies involved in the analysis of digital data, be that software developers, analysts, mathematicians or casual puzzle solvers.</p><br>
+                                <p>Cyber​​Chef 应该对网络安全和防病毒公司有用。它还应该吸引学术界以及参与数字数据分析的任何个人或公司，无论是软件开发人员，分析师，数学家还是临时难题解决者。</p><br>
 
 
                                 <h5><strong>Aim</strong></h5>
-                                <p>It is hoped that by releasing CyberChef through <a href="https://github.com/gchq/CyberChef">GitHub</a>, contributions can be added which can be rolled out into future versions of the tool.</p><br>
+                                <p>我们希望通过 CyberChef 在<a href="https://github.com/gchq/CyberChef">GitHub</a>上的发布，得到开源社区的贡献，这些贡献可以推广到该工具的未来版本中。</p><br>
 
 
                                 <br>
-                                <p>There are around 200 useful operations in CyberChef for anyone working on anything vaguely Internet-related, whether you just want to convert a timestamp to a different format, decompress gzipped data, create a SHA3 hash, or parse an X.509 certificate to find out who issued it.</p>
-                                <p>It’s the Cyber Swiss Army Knife.</p>
+                                <p>Cyber​​Chef 中大约有 200 种有用的操作，适用于任何与 Internet 相关的工作，无论您是要将时间戳转换为其他格式，解压缩压缩的数据，创建 SHA3 散列还是解析 X.509 证书来查找发行者。</p>
+                                <p>它就是网络领域的瑞士军刀。</p>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="keybindings" style="padding: 20px;">
                                 <table class="table table-condensed table-bordered table-hover" id="keybList"></table>
@@ -746,7 +746,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
                     </div>
                     <a href="https://github.com/gchq/CyberChef">
                         <img aria-hidden="true" style="position: absolute; top: 0; right: 0; border: 0;" src="<%- require('../static/images/fork_me.png').default %>" alt="Fork me on GitHub">
@@ -764,10 +764,10 @@
                     <div class="modal-body" id="confirm-body"></div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success" id="confirm-yes">
-                            Yes
+                            是
                         </button>
                         <button type="button" class="btn btn-danger" id="confirm-no" data-dismiss="modal">
-                            No
+                            否
                         </button>
                     </div>
                 </div>
@@ -778,56 +778,56 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Find Input Tab</h5>
+                        <h5 class="modal-title">查找输入标签页</h5>
                     </div>
                     <div class="modal-body" id="input-tab-body">
-                        <h6>Load Status</h6>
+                        <h6>加载状态</h6>
                         <div id="input-find-options">
                             <ul id="input-find-options-checkboxes">
                                 <li class="checkbox input-find-option">
                                     <label for="input-show-pending">
                                         <input type="checkbox" id="input-show-pending" checked="">
-                                        Pending
+                                        未确定
                                     </label>
                                 </li>
                                 <li class="checkbox input-find-option">
                                     <label for="input-show-loading">
                                         <input type="checkbox" id="input-show-loading" checked="">
-                                        Loading
+                                        正在加载
                                     </label>
                                 </li>
                                 <li class="checkbox input-find-option">
                                     <label for="input-show-loaded">
                                         <input type="checkbox" id="input-show-loaded" checked="">
-                                        Loaded
+                                        已加载
                                     </label>
                                 </li>
                             </ul>
                         </div>
                         <div class="form-group input-group">
                             <div class="toggle-string">
-                                <label for="input-filter" class="bmd-label-floating toggle-string">Filter (regex)</label>
+                                <label for="input-filter" class="bmd-label-floating toggle-string">过滤器（正则表达式）</label>
                                 <input type="text" class="form-control toggle-string" id="input-filter">
                             </div>
                             <div class="input-group-append">
                                 <button class="btn btn-secondary dropdown-toggle" id="input-filter-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CONTENT</button>
                                 <div class="dropdown-menu toggle-dropdown">
-                                    <a class="dropdown-item" id="input-filter-content">Content</a>
-                                    <a class="dropdown-item" id="input-filter-filename">Filename</a>
+                                    <a class="dropdown-item" id="input-filter-content">内容</a>
+                                    <a class="dropdown-item" id="input-filter-filename">文件名</a>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group input-find-option" id="input-num-results-container">
-                            <label for="input-num-results" class="bmd-label-floating">Number of results</label>
+                            <label for="input-num-results" class="bmd-label-floating">结果数量</label>
                             <input type="number" class="form-control" id="input-num-results" value="20" min="1">
                         </div>
                         <div style="clear:both"></div>
-                        <h6>Results</h6>
+                        <h6>结果</h6>
                         <ul id="input-search-results"></ul>
                     </div>
                     <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="input-filter-refresh">Refresh</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="input-filter-refresh">刷新</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
                     </div>
                 </div>
             </div>
@@ -837,59 +837,59 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Find Output Tab</h5>
+                        <h5 class="modal-title">查找输出标签页</h5>
                     </div>
                     <div class="modal-body" id="output-tab-body">
-                        <h6>Bake Status</h6>
+                        <h6>Bake 状态</h6>
                         <div id="output-find-options">
                             <ul id="output-find-options-checkboxes">
                                 <li class="checkbox output-find-option">
                                     <label for="output-show-pending">
                                         <input type="checkbox" id="output-show-pending" checked="">
-                                        Pending
+                                        未确定
                                     </label>
                                 </li>
                                 <li class="checkbox output-find-option">
                                     <label for="output-show-baking">
                                         <input type="checkbox" id="output-show-baking" checked="">
-                                        Baking
+                                        正在 Bake
                                     </label>
                                 </li>
                                 <li class="checkbox output-find-option">
                                     <label for="output-show-baked">
                                         <input type="checkbox" id="output-show-baked" checked="">
-                                        Baked
+                                        已 Bake
                                     </label>
                                 </li>
                                 <li class="checkbox output-find-option">
                                     <label for="output-show-stale">
                                         <input type="checkbox" id="output-show-stale" checked="">
-                                        Stale
+                                        过期的
                                     </label>
                                 </li>
                                 <li class="checkbox output-find-option">
                                     <label for="output-show-errored">
                                         <input type="checkbox" id="output-show-errored" checked="">
-                                        Errored
+                                        出错的
                                     </label>
                                 </li>
                             </ul>
                             <div class="form-group output-find-option">
-                                <label for="output-content-filter" class="bmd-label-floating">Content filter (regex)</label>
+                                <label for="output-content-filter" class="bmd-label-floating">内容过滤器（正则表达式）</label>
                                 <input type="text" class="form-control" id="output-content-filter">
                             </div>
                             <div class="form-group output-find-option" id="output-num-results-container">
-                                <label for="output-num-results" class="bmd-label-floating">Number of results</label>
+                                <label for="output-num-results" class="bmd-label-floating">结果数量</label>
                                 <input type="number" class="form-control" id="output-num-results" value="20">
                             </div>
                         </div>
                         <br>
-                        <h6>Results</h6>
+                        <h6>结果</h6>
                         <ul id="output-search-results"></ul>
                     </div>
                     <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="output-filter-refresh">Refresh</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="output-filter-refresh">刷新</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
                     </div>
                 </div>
             </div>
