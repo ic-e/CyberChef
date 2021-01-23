@@ -1,0 +1,59 @@
+name: Test & Deploy
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set node version
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+
+    - name: Install
+      run: |
+        npm install
+        export NODE_OPTIONS=--max_old_space_size=2048
+
+    - name: Lint
+      run: npx grunt lint
+
+    - name: Unit Tests
+      run: |
+        npm test
+        npx grunt testnodeconsumer
+
+    - name: Production Build
+      run: npx grunt prod
+
+    - name: Generate sitemap
+      run: npx grunt exec:sitemap
+
+    - name: UI Tests
+      run: xvfb-run --server-args="-screen 0 1200x800x24" npx grunt testui
+
+    - name: Prepare for GitHub Pages
+      run: npx grunt copy:ghPages
+
+    - name: Deploy to GitHub Pages
+      if: success() && github.ref == 'refs/heads/master'
+      uses: crazy-max/ghaction-github-pages@v2
+      with:
+        target_branch: gh-pages
+        build_dir: ./build/prod
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    #- name: Deploy to NPM
+    #    run: |
+    #      npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+    #      npm publish || true
+    #    env:
+    # Add NPM publish token to the repo secrets
+    #      NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} 

@@ -302,7 +302,7 @@ module.exports = function (grunt) {
                 },
                 files: [
                     {
-                        src: "build/prod/index.html",
+                        src: ["build/prod/index.html"],
                         dest: "build/prod/index.html"
                     }
                 ]
@@ -324,7 +324,7 @@ module.exports = function (grunt) {
                 },
                 files: [
                     {
-                        src: "build/prod/index.html",
+                        src: ["build/prod/index.html"],
                         dest: `build/prod/CyberChef_v${pkg.version}.html`
                     }
                 ]
