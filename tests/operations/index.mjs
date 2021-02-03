@@ -69,7 +69,6 @@ import "./tests/ParseQRCode.mjs";
 import "./tests/PowerSet.mjs";
 import "./tests/Regex.mjs";
 import "./tests/Register.mjs";
-import "./tests/RemoveDiacritics.mjs";
 import "./tests/Rotate.mjs";
 import "./tests/SeqUtils.mjs";
 import "./tests/SetDifference.mjs";
@@ -101,7 +100,8 @@ import "./tests/LuhnChecksum.mjs";
 import "./tests/CipherSaber2.mjs";
 import "./tests/Colossus.mjs";
 import "./tests/ParseObjectIDTimestamp.mjs";
-
+import "./tests/Unicode.mjs";
+import "./tests/RSA.mjs";
 
 // Cannot test operations that use the File type yet
 // import "./tests/SplitColourChannels.mjs";

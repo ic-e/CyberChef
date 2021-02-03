@@ -588,7 +588,7 @@ Password: 034148`;
         const result = await chef.generatePGPKeyPair("Back To the Drawing Board", {
             keyType: "ECC-256",
         });
-        assert.strictEqual(result.toString().length, 2007);
+        assert.strictEqual(result.toString().substr(0, 37), "-----BEGIN PGP PRIVATE KEY BLOCK-----");
     }),
 
     it("Generate UUID", () => {
@@ -656,7 +656,7 @@ Leap year: false
 Days in this month: 31
 
 Day of year: 187
-Week number: 2001
+Week number: 27
 Quarter: 3`;
         assert.strictEqual(result.toString(), expected);
     }),
@@ -854,7 +854,7 @@ pCGTErs=
 
     it("Snefru", () => {
         assert.strictEqual(
-            chef.snefru("demeaning milestone").toString(),
+            chef.snefru("demeaning milestone", {size: 256, rounds: 8}).toString(),
             "a671b48770fe073ce49e9259cc2f47d345a53712639f8ae23c5ad3fec19540a5");
     }),
 
